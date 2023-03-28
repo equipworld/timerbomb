@@ -1,0 +1,29 @@
+// Set the time limit (in seconds)
+var timeLimit = 60;
+
+// Initialize the timer variable
+var timer = timeLimit;
+
+// Get the timer display element
+var timerDisplay = document.getElementById("timer");
+
+// Define the function to update the timer
+function updateTimer() {
+  // Decrement the timer by 1 second
+  timer--;
+
+  // Display the updated timer value
+  timerDisplay.textContent = timer;
+
+  // Check if the timer has reached 0
+  if (timer <= 0) {
+    // Stop the timer
+    clearInterval(intervalId);
+
+    // Display a message indicating that time is up
+    timerDisplay.textContent = "muhanna walambaaa";
+  }
+}
+
+// Start the timer and store the interval ID
+var intervalId = setInterval(updateTimer, 1000);
